@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.multiBg{
+				width: 100%;
+				min-height: 400px;
+				background: #D3FF99;
+				position: relative;
+				z-index: 1;
+			}
+			
+			.multiBg:before,.multiBg:after{
+				position: absolute;
+				z-index: -1;
+				
+			}
+			
+			.multiBg:before{
+				text-align: left;
+				width: 100%;
+				padding-left:20px;
+				content: 'djlxs';
+				background:red url(img/vines-front.png) repeat-x;
+				
+			}
+			
+			.multiBg:after{
+				width: 100%;
+				text-align: right;
+				content: open-quote;
+				color: green;
+				background: url(img/vines-mid.png) repeat-x ;
+				
+				
+			}
+			
+			/*
+			 
+			 * 
+			 * 利用伪元素进行插入时应该注意，伪元素插入的内容不在DOM上，所以读屏软件是读不到伪元素插入的内容的
+			 * 伪元素插入的内容也不能绑定事件。
+			 * */
+			
+			li:before {
+			    content: attr(data-label);
+			    color: grey;
+			}
+			
+			a[href]::after{
+				content: attr(href);
+				color: lightsalmon;
+			}
+			
+			.counter{
+				counter-reset: counterTest;
+			}
+			
+			.counter div{
+				counter-increment: counterTest 1;
+			}
+			
+			.counter div:before{
+				content: counter(counterTest);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="multiBg"></div>
+		
+		<li data-label="todo">Buy Milk</li>
+	<a href="http://www.baidu.com">baidu</a>
+	
+	
+	<div class="counter">
+		<div>d</div>
+		<div>j</div>
+		<div>l</div>
+	</div>
+	
+	<p id="show"></p>
+		
+	</body>
+</html>

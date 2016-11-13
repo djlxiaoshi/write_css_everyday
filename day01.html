@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.demo{
+				width: 20px;
+				height: 20px;
+				border-radius: 100%;
+				border: 3px solid currentcolor;
+				position: relative;
+				color: darkslategray;
+				transform: rotate(-45deg);
+			}
+			
+			.demo:after{
+				content: '';
+				height: 15px;
+				width: 2px;
+				background: currentcolor;
+				position: absolute;
+				bottom: -15px;
+				right: 45%;
+				
+				
+			}
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="demo"></div>
+		<div class="search"></div>
+	</body>
+</html>

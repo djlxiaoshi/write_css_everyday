@@ -1,0 +1,27 @@
+@mixin search($size,$length,$color){
+    width: $size;
+    height: $size;
+    border-radius: 100%;
+    color: $color;
+    border: 2px solid currentcolor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: relative;
+    
+    &:before{
+        content: '';
+        height: $length;
+        width: $length/5;
+        background: currentcolor;
+        position: absolute;
+        bottom: -$length;
+        right: 50%;
+        
+    }    
+}
+
+.search{
+    margin: 5px;
+    @include search(50px,20px,blue);
+    
+}

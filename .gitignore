@@ -6,3 +6,5 @@
 #忽略所有map文件，主要是scss编译产生的中间文件
 
 *.map
+
+test.txt
